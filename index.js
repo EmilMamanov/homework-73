@@ -6,4 +6,8 @@ app.get('/', (req, res) => {
     res.send('Homework 73');
 });
 
+app.get('/:word', (req, res) => {
+   res.send(req.params.word);
+});
+
 app.listen(port, () => {});
