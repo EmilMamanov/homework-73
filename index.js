@@ -19,5 +19,11 @@ app.get('/encode/:text', (req, res) => {
     res.send(encodedText);
 });
 
+app.get('/decode/:text', (req, res) => {
+    const textDecode = req.params.text;
+    const decodedText = Vigenere.Decipher(password).crypt(textDecode);
+    res.send(decodedText);
+});
+
 
 app.listen(port, () => {});
